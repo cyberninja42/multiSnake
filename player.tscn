@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://5vsa5c883on4"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_f1xlj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdb0q"]
+size = Vector2(10, 10)
+
+[node name="Node2D" type="Area2D" groups=["snake"]]
+script = ExtResource("1_f1xlj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_vdb0q")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
