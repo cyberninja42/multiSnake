@@ -5,8 +5,8 @@ var tail_scene = load("res://tail.tscn")
 var bounds = Vector2(28,15)
 
 func _ready():
-	pass
-	
+	generate_world()
+		
 func generate_world():
 	var player = player_scene.instantiate()
 	player.position=Vector2(40,40)
